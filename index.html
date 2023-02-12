@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     /* 이서윤체 폰트 적용을 위한 코드 */
+     @font-face {
+        font-family: "LeeSeoyun";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        font-family: "LeeSeoyun";
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        background-image: url(./background.jpg);
+        background-size: cover;
+      }
+      button , input {
+        font-family: "LeeSeoyun";
+      }
+
+      .container {
+        margin: 50px 0;
+        width: 250px;
+        background-color: #8f94a28c;
+        height: 100%;
+      }
+
+      .photos {
+        margin-top: 30px;
+      }
+      .photo-frame {
+        background-color: #fff;
+        margin: 15px 20px;
+        height: 130px;
+        position: relative;
+      }
+
+      label {
+        padding: 10px;
+        background-color: #ddd;
+        border-radius: 15px;
+        display: inline-block;
+        margin-left: 80px;
+        margin-top: 50px;
+        cursor: pointer;
+      }
+      .photo-frame input {
+        display: none;
+      }
+
+      .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .f-title {
+        font-size: 25px;
+        font-weight: 900;
+        color: #fff;
+      }
+      .f-title p {
+        margin: 0;
+      }
+      .f-title input {
+        background: transparent;
+        border: none;
+        width: 180px;
+        text-indent: 25px;
+      }
+      .f-title button {
+        background: transparent;
+        border: none;
+        color: #fff;
+      }
+      .f-title input:focus {
+        outline:none;
+      }
+      .f-title input::placeholder {
+        color: #ddd;
+      }
+      .no-display {
+        display: none;
+    }
+      .f-date {
+        font-size: 15px;
+        font-weight: 500;
+        color: #fff;
+      }
+
+</style>
+<body>
+    <div class="container">
+        <div class="photos">
+            <div id="image1" class="photo-frame">
+                <label for="img01">cut 1</label>
+                <input type="file" id="img01" accept="image/*" onchange="loadFile(this)">
+            </div>
+            <div id="image2" class="photo-frame">
+                <label for="img02">cut 2</label>
+                <input type="file" id="img02" accept="image/*" onchange="loadFile(this)">
+            </div>
+            <div id="image3" class="photo-frame">
+                <label for="img03">cut 3</label>
+                <input type="file" id="img03" accept="image/*" onchange="loadFile(this)">
+            </div>
+            <div id="image4" class="photo-frame">
+                <label for="img04">cut 4</label>
+                <input type="file" id="img04" accept="image/*" onchange="loadFile(this)">
+            </div>
+        </div>
+        <div class="footer">
+            <p class="f-title">
+                <input type="text" id="titleInput" oninput="setTitle()" onclick="buttonOn()" placeholder="오늘의 기분을 입력하세요 :-)">
+                <button id="titleBtn" class="no-display" onclick="buttonOff()">입력!</button>
+            </p>
+            <p class="f-date">2023.02.12</p>
+        </div>
+    </div>
+
+
+
+    <script src="./main.js"></script>
+</body>
+</html>
